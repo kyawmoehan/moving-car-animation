@@ -1,0 +1,137 @@
+body{
+    margin: 0;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.wrapper{
+    height: 90vh;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 2rem auto;
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+    box-shadow: 1px 3px 20px rgba(0,0,0,0.4);
+    border-radius: .2rem;
+    position: relative;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    overflow: hidden;
+    height: 100%;
+}
+.container .title{
+    width: 90%;
+    height: 20%;
+   text-align: center;
+   padding: 2rem;
+   margin: 9rem 0;
+   z-index: 999;
+}
+.container h1{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 3rem;
+    color: aliceblue;
+}
+.container p{
+    font-family: 'Muli', sans-serif;
+    color: #ececf0bd;
+}
+
+.container .button{
+    font-family: 'Muli', sans-serif;
+    font-size: 1rem;
+    padding: .8rem 2.3rem;
+    background-color: #fff;
+    margin: 0.1rem;
+    border: 0;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+/* moving car */
+.clip-svg {
+    clip-path: url(#myclip);
+}
+
+.night{
+    height: 560px;
+    width: 700px;
+    background: url('assets/background.png');
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+}
+.surface{
+    height: 140px;
+    width: 500%;
+    background: url('assets/Img_02.png');
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    background-repeat: repeat-x;
+}
+
+.car{
+    position: absolute;
+    bottom: 43px;
+    left: 24%;
+}
+/* animation */
+.moveRight{
+    animation: moveRight 6s linear infinite;
+  }
+  
+@keyframes moveRight{
+    100%{
+        transform: translateX(-2950px);
+    }
+}
+.suspension{
+    animation: suspension 1s linear infinite;
+  }
+@keyframes suspension{
+    100%{transform: translateY(-1px);}
+    50%{transform: translateY(2px);}
+    0%{transform: translateY(-1px);}
+}
+
+.mobile-view,.tablet-view{
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.mobile-view img,.tablet-view img{
+    width: 100%;
+}
+/* responsive */
+@media (max-width:990px){
+    .view{
+        display: none;
+    }
+    .tablet-view{
+        display: block;
+    }
+    .container{
+        grid-template-columns: 100%;
+    }
+    .container .title{
+        margin: 3rem 1rem;
+        padding: 0.9rem;
+    }
+}
+@media (max-width:678px){
+    .tablet-view{
+        display: none;
+    }
+    .mobile-view{
+        display: block;
+    }
+}
+@media (max-width:470px){
+    .mobile-view{
+        display: none;
+    }
+}
